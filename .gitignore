@@ -1,0 +1,26 @@
+# Virtual env and tooling
+.venv/
+venv/
+.python-version
+
+# Build and cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Cartography output (optional: commit for demo)
+# .cartography/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
