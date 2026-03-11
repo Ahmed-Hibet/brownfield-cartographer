@@ -27,7 +27,7 @@
       "loc": 39,
       "comment_ratio": 0.0204,
       "is_high_velocity": true,
-      "pagerank": 0.026721,
+      "pagerank": 0.020908,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/cli.py"
@@ -57,7 +57,7 @@
       "loc": 27,
       "comment_ratio": 0.0,
       "is_high_velocity": true,
-      "pagerank": 0.049433,
+      "pagerank": 0.03868,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/orchestrator.py"
@@ -77,7 +77,7 @@
       "loc": 2,
       "comment_ratio": 0.0,
       "is_high_velocity": true,
-      "pagerank": 0.026721,
+      "pagerank": 0.020908,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/__init__.py"
@@ -87,15 +87,16 @@
       "language": "python",
       "purpose_statement": null,
       "domain_cluster": null,
-      "complexity_score": 11.2,
+      "complexity_score": 19.0,
       "change_velocity_30d": 1,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
+        "logging",
         "pathlib",
+        "src.analyzers.python_data_flow",
         "src.analyzers.sql_lineage",
         "src.analyzers.dag_config_parser",
-        "src.graph.knowledge_graph",
         "src.models"
       ],
       "public_functions": [
@@ -122,10 +123,10 @@
           "bases": []
         }
       ],
-      "loc": 52,
-      "comment_ratio": 0.0156,
+      "loc": 130,
+      "comment_ratio": 0.0318,
       "is_high_velocity": true,
-      "pagerank": 0.052083,
+      "pagerank": 0.045197,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/agents/hydrologist.py"
@@ -136,7 +137,7 @@
       "purpose_statement": null,
       "domain_cluster": null,
       "complexity_score": 30.4,
-      "change_velocity_30d": 1,
+      "change_velocity_30d": 2,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
@@ -173,7 +174,7 @@
       "loc": 244,
       "comment_ratio": 0.0386,
       "is_high_velocity": true,
-      "pagerank": 0.052083,
+      "pagerank": 0.04964,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/agents/surveyor.py"
@@ -196,7 +197,7 @@
       "loc": 4,
       "comment_ratio": 0.0,
       "is_high_velocity": true,
-      "pagerank": 0.026721,
+      "pagerank": 0.020908,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/agents/__init__.py"
@@ -206,23 +207,30 @@
       "language": "python",
       "purpose_statement": null,
       "domain_cluster": null,
-      "complexity_score": 6.8,
+      "complexity_score": 21.1,
       "change_velocity_30d": 1,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
+        "logging",
+        "re",
         "pathlib",
         "typing",
+        "yaml",
         "src.models"
       ],
       "public_functions": [
         {
           "name": "parse_airflow_dag",
-          "signature": "def parse_airflow_dag(self, path)"
+          "signature": "def parse_airflow_dag(\r\n        self, path)"
         },
         {
           "name": "parse_dbt_schema_yml",
-          "signature": "def parse_dbt_schema_yml(self, path)"
+          "signature": "def parse_dbt_schema_yml(\r\n        self, path)"
+        },
+        {
+          "name": "extract_dbt_refs_sources_from_sql",
+          "signature": "def extract_dbt_refs_sources_from_sql(\r\n        self, path)"
         }
       ],
       "classes": [
@@ -231,26 +239,67 @@
           "bases": []
         }
       ],
-      "loc": 28,
-      "comment_ratio": 0.0556,
+      "loc": 161,
+      "comment_ratio": 0.0435,
       "is_high_velocity": true,
-      "pagerank": 0.045359,
+      "pagerank": 0.039398,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/analyzers/dag_config_parser.py"
+    },
+    {
+      "path": "src/analyzers/python_data_flow.py",
+      "language": "python",
+      "purpose_statement": null,
+      "domain_cluster": null,
+      "complexity_score": 17.2,
+      "change_velocity_30d": 0,
+      "is_dead_code_candidate": false,
+      "last_modified": null,
+      "imports": [
+        "logging",
+        "pathlib",
+        "typing",
+        "tree_sitter",
+        "src.analyzers.tree_sitter_analyzer",
+        "src.models"
+      ],
+      "public_functions": [
+        {
+          "name": "walk",
+          "signature": "def walk(n)"
+        },
+        {
+          "name": "parse_file",
+          "signature": "def parse_file(self, path)"
+        }
+      ],
+      "classes": [
+        {
+          "name": "PythonDataFlowAnalyzer",
+          "bases": []
+        }
+      ],
+      "loc": 132,
+      "comment_ratio": 0.0471,
+      "is_high_velocity": false,
+      "pagerank": 0.039398,
+      "in_cycle": false,
+      "cycle_id": null,
+      "id": "src/analyzers/python_data_flow.py"
     },
     {
       "path": "src/analyzers/sql_lineage.py",
       "language": "python",
       "purpose_statement": null,
       "domain_cluster": null,
-      "complexity_score": 7.7,
+      "complexity_score": 12.3,
       "change_velocity_30d": 1,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
+        "logging",
         "pathlib",
-        "typing",
         "sqlglot",
         "sqlglot",
         "src.models"
@@ -258,7 +307,7 @@
       "public_functions": [
         {
           "name": "parse_file",
-          "signature": "def parse_file(self, path)"
+          "signature": "def parse_file(\r\n        self, path)"
         }
       ],
       "classes": [
@@ -267,10 +316,10 @@
           "bases": []
         }
       ],
-      "loc": 47,
-      "comment_ratio": 0.0,
+      "loc": 93,
+      "comment_ratio": 0.018,
       "is_high_velocity": true,
-      "pagerank": 0.045359,
+      "pagerank": 0.039398,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/analyzers/sql_lineage.py"
@@ -281,7 +330,7 @@
       "purpose_statement": null,
       "domain_cluster": null,
       "complexity_score": 28.9,
-      "change_velocity_30d": 1,
+      "change_velocity_30d": 2,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
@@ -326,7 +375,7 @@
       "loc": 209,
       "comment_ratio": 0.0267,
       "is_high_velocity": true,
-      "pagerank": 0.056427,
+      "pagerank": 0.072078,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/analyzers/tree_sitter_analyzer.py"
@@ -336,21 +385,22 @@
       "language": "python",
       "purpose_statement": null,
       "domain_cluster": null,
-      "complexity_score": 1.0,
+      "complexity_score": 1.2,
       "change_velocity_30d": 1,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
         "src.analyzers.tree_sitter_analyzer",
         "src.analyzers.sql_lineage",
-        "src.analyzers.dag_config_parser"
+        "src.analyzers.dag_config_parser",
+        "src.analyzers.python_data_flow"
       ],
       "public_functions": [],
       "classes": [],
-      "loc": 10,
+      "loc": 12,
       "comment_ratio": 0.0,
       "is_high_velocity": true,
-      "pagerank": 0.026721,
+      "pagerank": 0.020908,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/analyzers/__init__.py"
@@ -400,7 +450,7 @@
       "loc": 34,
       "comment_ratio": 0.0,
       "is_high_velocity": true,
-      "pagerank": 0.074507,
+      "pagerank": 0.04964,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/graph/knowledge_graph.py"
@@ -422,7 +472,7 @@
       "loc": 3,
       "comment_ratio": 0.0,
       "is_high_velocity": true,
-      "pagerank": 0.026721,
+      "pagerank": 0.020908,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/graph/__init__.py"
@@ -459,7 +509,7 @@
       "loc": 17,
       "comment_ratio": 0.0,
       "is_high_velocity": true,
-      "pagerank": 0.114997,
+      "pagerank": 0.112014,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/models/edges.py"
@@ -470,7 +520,7 @@
       "purpose_statement": null,
       "domain_cluster": null,
       "complexity_score": 15.3,
-      "change_velocity_30d": 1,
+      "change_velocity_30d": 2,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
@@ -515,7 +565,7 @@
       "loc": 53,
       "comment_ratio": 0.0141,
       "is_high_velocity": true,
-      "pagerank": 0.114997,
+      "pagerank": 0.112014,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/models/nodes.py"
@@ -538,7 +588,7 @@
       "loc": 18,
       "comment_ratio": 0.0,
       "is_high_velocity": false,
-      "pagerank": 0.20771,
+      "pagerank": 0.214367,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/models/__init__.py"
@@ -574,10 +624,104 @@
       "loc": 14,
       "comment_ratio": 0.0,
       "is_high_velocity": false,
-      "pagerank": 0.026721,
+      "pagerank": 0.020908,
       "in_cycle": false,
       "cycle_id": null,
       "id": "tests/test_models.py"
+    },
+    {
+      "path": "tests/test_phase1.py",
+      "language": "python",
+      "purpose_statement": null,
+      "domain_cluster": null,
+      "complexity_score": 10.9,
+      "change_velocity_30d": 1,
+      "is_dead_code_candidate": false,
+      "last_modified": null,
+      "imports": [
+        "pytest",
+        "pathlib",
+        "src.analyzers.tree_sitter_analyzer",
+        "src.agents.surveyor"
+      ],
+      "public_functions": [
+        {
+          "name": "test_language_router_extension_map",
+          "signature": "def test_language_router_extension_map() -> None)"
+        },
+        {
+          "name": "test_analyze_module_python_extracts_imports_and_functions",
+          "signature": "def test_analyze_module_python_extracts_imports_and_functions() -> None)"
+        },
+        {
+          "name": "test_high_velocity_files_pareto",
+          "signature": "def test_high_velocity_files_pareto() -> None)"
+        },
+        {
+          "name": "test_resolve_import_same_dir",
+          "signature": "def test_resolve_import_same_dir() -> None)"
+        },
+        {
+          "name": "test_extract_git_velocity_returns_int",
+          "signature": "def test_extract_git_velocity_returns_int() -> None)"
+        }
+      ],
+      "classes": [],
+      "loc": 59,
+      "comment_ratio": 0.0263,
+      "is_high_velocity": false,
+      "pagerank": 0.020908,
+      "in_cycle": false,
+      "cycle_id": null,
+      "id": "tests/test_phase1.py"
+    },
+    {
+      "path": "tests/test_phase2.py",
+      "language": "python",
+      "purpose_statement": null,
+      "domain_cluster": null,
+      "complexity_score": 11.6,
+      "change_velocity_30d": 0,
+      "is_dead_code_candidate": false,
+      "last_modified": null,
+      "imports": [
+        "pytest",
+        "pathlib",
+        "src.analyzers.python_data_flow",
+        "src.analyzers.sql_lineage",
+        "src.analyzers.dag_config_parser",
+        "src.agents.hydrologist"
+      ],
+      "public_functions": [
+        {
+          "name": "test_python_data_flow_read_write",
+          "signature": "def test_python_data_flow_read_write() -> None)"
+        },
+        {
+          "name": "test_sql_lineage_sources_and_target",
+          "signature": "def test_sql_lineage_sources_and_target() -> None)"
+        },
+        {
+          "name": "test_dbt_schema_yml_models",
+          "signature": "def test_dbt_schema_yml_models() -> None)"
+        },
+        {
+          "name": "test_dbt_refs_from_sql",
+          "signature": "def test_dbt_refs_from_sql() -> None)"
+        },
+        {
+          "name": "test_hydrologist_blast_radius_and_sources_sinks",
+          "signature": "def test_hydrologist_blast_radius_and_sources_sinks() -> None)"
+        }
+      ],
+      "classes": [],
+      "loc": 66,
+      "comment_ratio": 0.0,
+      "is_high_velocity": false,
+      "pagerank": 0.020908,
+      "in_cycle": false,
+      "cycle_id": null,
+      "id": "tests/test_phase2.py"
     },
     {
       "path": "tests/__init__.py",
@@ -594,7 +738,7 @@
       "loc": 1,
       "comment_ratio": 0.0,
       "is_high_velocity": false,
-      "pagerank": 0.026721,
+      "pagerank": 0.020908,
       "in_cycle": false,
       "cycle_id": null,
       "id": "tests/__init__.py"
@@ -624,17 +768,17 @@
     {
       "weight": 1,
       "source": "src/agents/hydrologist.py",
+      "target": "src/analyzers/python_data_flow.py"
+    },
+    {
+      "weight": 1,
+      "source": "src/agents/hydrologist.py",
       "target": "src/analyzers/sql_lineage.py"
     },
     {
       "weight": 1,
       "source": "src/agents/hydrologist.py",
       "target": "src/analyzers/dag_config_parser.py"
-    },
-    {
-      "weight": 1,
-      "source": "src/agents/hydrologist.py",
-      "target": "src/graph/knowledge_graph.py"
     },
     {
       "weight": 1,
@@ -668,6 +812,16 @@
     },
     {
       "weight": 1,
+      "source": "src/analyzers/python_data_flow.py",
+      "target": "src/analyzers/tree_sitter_analyzer.py"
+    },
+    {
+      "weight": 1,
+      "source": "src/analyzers/python_data_flow.py",
+      "target": "src/models/__init__.py"
+    },
+    {
+      "weight": 1,
       "source": "src/analyzers/sql_lineage.py",
       "target": "src/models/__init__.py"
     },
@@ -693,6 +847,11 @@
     },
     {
       "weight": 1,
+      "source": "src/analyzers/__init__.py",
+      "target": "src/analyzers/python_data_flow.py"
+    },
+    {
+      "weight": 1,
       "source": "src/graph/__init__.py",
       "target": "src/graph/knowledge_graph.py"
     },
@@ -710,6 +869,36 @@
       "weight": 1,
       "source": "tests/test_models.py",
       "target": "src/models/__init__.py"
+    },
+    {
+      "weight": 1,
+      "source": "tests/test_phase1.py",
+      "target": "src/analyzers/tree_sitter_analyzer.py"
+    },
+    {
+      "weight": 1,
+      "source": "tests/test_phase1.py",
+      "target": "src/agents/surveyor.py"
+    },
+    {
+      "weight": 1,
+      "source": "tests/test_phase2.py",
+      "target": "src/analyzers/python_data_flow.py"
+    },
+    {
+      "weight": 1,
+      "source": "tests/test_phase2.py",
+      "target": "src/analyzers/sql_lineage.py"
+    },
+    {
+      "weight": 1,
+      "source": "tests/test_phase2.py",
+      "target": "src/analyzers/dag_config_parser.py"
+    },
+    {
+      "weight": 1,
+      "source": "tests/test_phase2.py",
+      "target": "src/agents/hydrologist.py"
     }
   ]
 }

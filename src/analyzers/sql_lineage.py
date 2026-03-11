@@ -1,24 +1,32 @@
-"""SQL dependency extraction using sqlglot for SELECT/FROM/JOIN/CTE chains."""
+"""SQL dependency extraction using sqlglot for SELECT/FROM/JOIN/CTE and INSERT/CREATE."""
 
+import logging
 from pathlib import Path
-from typing import Any
 
 import sqlglot
 from sqlglot import exp
 
 from src.models import TransformationNode
 
+logger = logging.getLogger(__name__)
+
+# Dialects to try (spec: PostgreSQL, BigQuery, Snowflake, DuckDB)
+DIALECTS = ("postgres", "bigquery", "snowflake", "duckdb")
+
 
 class SQLLineageAnalyzer:
     """Extract table dependencies from SQL files and dbt models using sqlglot."""
 
-    def __init__(self, dialect: str = "generic") -> None:
-        self.dialect = dialect  # postgres, bigquery, snowflake, duckdb, etc.
+    def __init__(self, dialect: str | None = None) -> None:
+        self.dialect = dialect or "postgres"
 
-    def parse_file(self, path: str | Path, source: str | None = None) -> list[TransformationNode]:
+    def parse_file(
+        self, path: str | Path, source: str | None = None
+    ) -> list[TransformationNode]:
         """
         Parse a .sql file and return transformation nodes for lineage.
-        Extracts tables from FROM, JOIN, and CTE (WITH) clauses.
+        Extracts sources from FROM/JOIN/WITH; targets from INSERT INTO, CREATE TABLE AS, MERGE.
+        Tries multiple dialects if parse fails.
         """
         path = Path(path)
         if source is None and path.exists():
@@ -26,32 +34,78 @@ class SQLLineageAnalyzer:
         if not source:
             return []
 
-        try:
-            parsed = sqlglot.parse(source, dialect=self.dialect)
-        except Exception:
+        path_str = str(path)
+        nodes: list[TransformationNode] = []
+        parsed = None
+        used_dialect = self.dialect
+
+        dialects_to_try = [self.dialect] if self.dialect in DIALECTS else []
+        dialects_to_try += [d for d in DIALECTS if d not in dialects_to_try]
+        for d in dialects_to_try:
+            try:
+                parsed = sqlglot.parse(source, dialect=d)
+                used_dialect = d
+                break
+            except Exception:
+                continue
+        else:
+            parsed = None
+
+        if not parsed:
             return []
 
-        nodes: list[TransformationNode] = []
         for statement in parsed:
-            deps = self._extract_table_references(statement)
-            if deps:
-                nodes.append(
-                    TransformationNode(
-                        source_datasets=list(deps),
-                        target_datasets=[],  # Can be inferred from INSERT/MERGE/CREATE TABLE
-                        transformation_type="sql",
-                        source_file=str(path),
-                        line_range=None,
-                        sql_query_if_applicable=source[:2000],
+            try:
+                all_tables = self._extract_table_references(statement)
+                tgt_table = self._extract_target_table(statement, used_dialect)
+                src_tables = all_tables - {tgt_table} if tgt_table else all_tables
+                if src_tables or tgt_table:
+                    nodes.append(
+                        TransformationNode(
+                            source_datasets=list(src_tables),
+                            target_datasets=[tgt_table] if tgt_table else [],
+                            transformation_type="sql",
+                            source_file=path_str,
+                            line_range=None,
+                            sql_query_if_applicable=source[:2000],
+                        )
                     )
-                )
+            except Exception as e:
+                logger.debug("Statement parse skip in %s: %s", path, e)
+                continue
+
         return nodes
 
     def _extract_table_references(self, node: exp.Expression) -> set[str]:
-        """Recursively collect table names from FROM, JOIN, and CTEs."""
+        """Collect table names from FROM, JOIN, and subqueries/CTEs (sources)."""
         refs: set[str] = set()
         for table in node.find_all(exp.Table):
-            name = table.sql(dialect=self.dialect)
+            name = table.sql(dialect="postgres")
             if name:
                 refs.add(name)
         return refs
+
+    def _extract_target_table(self, node: exp.Expression, dialect: str) -> str | None:
+        """Extract target table from INSERT, CREATE TABLE AS, MERGE, UPDATE."""
+        if isinstance(node, exp.Insert):
+            if node.this:
+                return node.this.sql(dialect=dialect)
+            return None
+        if isinstance(node, exp.Create):
+            # CREATE TABLE name AS SELECT ...
+            if node.this and isinstance(node.this, exp.Schema):
+                name = node.this.this
+                if name:
+                    return name.sql(dialect=dialect)
+            if node.this:
+                return node.this.sql(dialect=dialect)
+            return None
+        if isinstance(node, exp.Merge):
+            if node.this:
+                return node.this.sql(dialect=dialect)
+            return None
+        if isinstance(node, exp.Update):
+            if node.this:
+                return node.this.sql(dialect=dialect)
+            return None
+        return None

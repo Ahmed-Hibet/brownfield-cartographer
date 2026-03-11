@@ -2,6 +2,22 @@
   "directed": true,
   "multigraph": false,
   "graph": {},
-  "nodes": [],
+  "nodes": [
+    {
+      "source_datasets": [
+        "dynamic reference, cannot resolve"
+      ],
+      "target_datasets": [],
+      "transformation_type": "python",
+      "source_file": "src\\graph\\knowledge_graph.py",
+      "line_range": [
+        44,
+        44
+      ],
+      "sql_query_if_applicable": null,
+      "source_file_norm": "src/graph/knowledge_graph.py",
+      "id": "T_1_src/graph/knowledge_graph.py:44-44"
+    }
+  ],
   "edges": []
 }
