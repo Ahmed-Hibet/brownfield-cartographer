@@ -26,6 +26,16 @@ class ModuleNode(BaseModel):
     change_velocity_30d: int | None = None
     is_dead_code_candidate: bool = False
     last_modified: str | None = None
+    # Phase 1: static analysis extraction
+    imports: list[str] = Field(default_factory=list)  # imported module names/paths
+    public_functions: list[dict[str, Any]] = Field(
+        default_factory=list
+    )  # [{"name": str, "signature": str|null}]
+    classes: list[dict[str, Any]] = Field(
+        default_factory=list
+    )  # [{"name": str, "bases": list[str]}]
+    loc: int | None = None  # lines of code (non-empty, non-comment)
+    comment_ratio: float | None = None  # comment lines / total lines
 
 
 class DatasetNode(BaseModel):
