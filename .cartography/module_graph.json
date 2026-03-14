@@ -8,15 +8,21 @@
       "language": "python",
       "purpose_statement": null,
       "domain_cluster": null,
-      "complexity_score": 4.9,
+      "complexity_score": 10.6,
       "change_velocity_30d": 1,
-      "is_dead_code_candidate": false,
+      "is_dead_code_candidate": true,
       "last_modified": null,
       "imports": [
+        "logging",
+        "re",
+        "shutil",
+        "tempfile",
         "pathlib",
         "typer",
         "src.orchestrator"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "analyze",
@@ -24,8 +30,11 @@
         }
       ],
       "classes": [],
-      "loc": 39,
-      "comment_ratio": 0.0204,
+      "loc": 96,
+      "comment_ratio": 0.0088,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.020908,
       "in_cycle": false,
@@ -37,16 +46,20 @@
       "language": "python",
       "purpose_statement": null,
       "domain_cluster": null,
-      "complexity_score": 3.7,
+      "complexity_score": 4.8,
       "change_velocity_30d": 1,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
+        "json",
+        "logging",
         "pathlib",
         "src.agents.surveyor",
         "src.agents.hydrologist",
         "src.graph.knowledge_graph"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "run_analysis",
@@ -54,8 +67,11 @@
         }
       ],
       "classes": [],
-      "loc": 27,
+      "loc": 38,
       "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.03868,
       "in_cycle": false,
@@ -72,10 +88,15 @@
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [],
       "classes": [],
       "loc": 2,
       "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.020908,
       "in_cycle": false,
@@ -87,8 +108,8 @@
       "language": "python",
       "purpose_statement": null,
       "domain_cluster": null,
-      "complexity_score": 19.0,
-      "change_velocity_30d": 1,
+      "complexity_score": 19.4,
+      "change_velocity_30d": 2,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
@@ -99,6 +120,8 @@
         "src.analyzers.dag_config_parser",
         "src.models"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "analyze",
@@ -123,8 +146,11 @@
           "bases": []
         }
       ],
-      "loc": 130,
-      "comment_ratio": 0.0318,
+      "loc": 134,
+      "comment_ratio": 0.025,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.045197,
       "in_cycle": false,
@@ -136,7 +162,7 @@
       "language": "python",
       "purpose_statement": null,
       "domain_cluster": null,
-      "complexity_score": 30.4,
+      "complexity_score": 37.8,
       "change_velocity_30d": 2,
       "is_dead_code_candidate": false,
       "last_modified": null,
@@ -147,6 +173,8 @@
         "src.analyzers.tree_sitter_analyzer",
         "src.models"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "get_git_repo_root",
@@ -163,6 +191,10 @@
         {
           "name": "analyze",
           "signature": "def analyze(self, file_paths)"
+        },
+        {
+          "name": "get_survey_analytics",
+          "signature": "def get_survey_analytics(self) -> dict)"
         }
       ],
       "classes": [
@@ -171,8 +203,11 @@
           "bases": []
         }
       ],
-      "loc": 244,
-      "comment_ratio": 0.0386,
+      "loc": 308,
+      "comment_ratio": 0.0367,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.04964,
       "in_cycle": false,
@@ -192,10 +227,15 @@
         "src.agents.surveyor",
         "src.agents.hydrologist"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [],
       "classes": [],
       "loc": 4,
       "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.020908,
       "in_cycle": false,
@@ -208,7 +248,7 @@
       "purpose_statement": null,
       "domain_cluster": null,
       "complexity_score": 21.1,
-      "change_velocity_30d": 1,
+      "change_velocity_30d": 2,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
@@ -219,6 +259,8 @@
         "yaml",
         "src.models"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "parse_airflow_dag",
@@ -241,6 +283,9 @@
       ],
       "loc": 161,
       "comment_ratio": 0.0435,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.039398,
       "in_cycle": false,
@@ -253,7 +298,7 @@
       "purpose_statement": null,
       "domain_cluster": null,
       "complexity_score": 17.2,
-      "change_velocity_30d": 0,
+      "change_velocity_30d": 1,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
@@ -264,6 +309,8 @@
         "src.analyzers.tree_sitter_analyzer",
         "src.models"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "walk",
@@ -282,7 +329,10 @@
       ],
       "loc": 132,
       "comment_ratio": 0.0471,
-      "is_high_velocity": false,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
+      "is_high_velocity": true,
       "pagerank": 0.039398,
       "in_cycle": false,
       "cycle_id": null,
@@ -293,17 +343,20 @@
       "language": "python",
       "purpose_statement": null,
       "domain_cluster": null,
-      "complexity_score": 12.3,
-      "change_velocity_30d": 1,
+      "complexity_score": 19.5,
+      "change_velocity_30d": 2,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
         "logging",
+        "re",
         "pathlib",
         "sqlglot",
         "sqlglot",
         "src.models"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "parse_file",
@@ -316,8 +369,11 @@
           "bases": []
         }
       ],
-      "loc": 93,
-      "comment_ratio": 0.018,
+      "loc": 165,
+      "comment_ratio": 0.0156,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.039398,
       "in_cycle": false,
@@ -329,7 +385,7 @@
       "language": "python",
       "purpose_statement": null,
       "domain_cluster": null,
-      "complexity_score": 28.9,
+      "complexity_score": 55.8,
       "change_velocity_30d": 2,
       "is_dead_code_candidate": false,
       "last_modified": null,
@@ -340,6 +396,8 @@
         "tree_sitter",
         "src.models"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "get_language",
@@ -362,6 +420,18 @@
           "signature": "def walk(n)"
         },
         {
+          "name": "walk",
+          "signature": "def walk(n)"
+        },
+        {
+          "name": "walk",
+          "signature": "def walk(n)"
+        },
+        {
+          "name": "walk",
+          "signature": "def walk(n)"
+        },
+        {
           "name": "analyze_module",
           "signature": "def analyze_module(path)"
         }
@@ -372,8 +442,11 @@
           "bases": []
         }
       ],
-      "loc": 209,
-      "comment_ratio": 0.0267,
+      "loc": 448,
+      "comment_ratio": 0.0208,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.072078,
       "in_cycle": false,
@@ -386,7 +459,7 @@
       "purpose_statement": null,
       "domain_cluster": null,
       "complexity_score": 1.2,
-      "change_velocity_30d": 1,
+      "change_velocity_30d": 2,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
@@ -395,10 +468,15 @@
         "src.analyzers.dag_config_parser",
         "src.analyzers.python_data_flow"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [],
       "classes": [],
       "loc": 12,
       "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.020908,
       "in_cycle": false,
@@ -419,6 +497,8 @@
         "pathlib",
         "typing"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "graph",
@@ -449,6 +529,9 @@
       ],
       "loc": 34,
       "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.04964,
       "in_cycle": false,
@@ -467,10 +550,15 @@
       "imports": [
         "src.graph.knowledge_graph"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [],
       "classes": [],
       "loc": 3,
       "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.020908,
       "in_cycle": false,
@@ -490,6 +578,8 @@
         "enum",
         "pydantic"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [],
       "classes": [
         {
@@ -508,6 +598,9 @@
       ],
       "loc": 17,
       "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.112014,
       "in_cycle": false,
@@ -519,7 +612,7 @@
       "language": "python",
       "purpose_statement": null,
       "domain_cluster": null,
-      "complexity_score": 15.3,
+      "complexity_score": 15.8,
       "change_velocity_30d": 2,
       "is_dead_code_candidate": false,
       "last_modified": null,
@@ -528,6 +621,8 @@
         "typing",
         "pydantic"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [],
       "classes": [
         {
@@ -562,8 +657,11 @@
           ]
         }
       ],
-      "loc": 53,
-      "comment_ratio": 0.0141,
+      "loc": 58,
+      "comment_ratio": 0.026,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": true,
       "pagerank": 0.112014,
       "in_cycle": false,
@@ -583,10 +681,15 @@
         "src.models.nodes",
         "src.models.edges"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [],
       "classes": [],
       "loc": 18,
       "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": false,
       "pagerank": 0.214367,
       "in_cycle": false,
@@ -600,12 +703,14 @@
       "domain_cluster": null,
       "complexity_score": 4.4,
       "change_velocity_30d": 1,
-      "is_dead_code_candidate": false,
+      "is_dead_code_candidate": true,
       "last_modified": null,
       "imports": [
         "pytest",
         "src.models"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "test_module_node",
@@ -623,6 +728,9 @@
       "classes": [],
       "loc": 14,
       "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": false,
       "pagerank": 0.020908,
       "in_cycle": false,
@@ -636,7 +744,7 @@
       "domain_cluster": null,
       "complexity_score": 10.9,
       "change_velocity_30d": 1,
-      "is_dead_code_candidate": false,
+      "is_dead_code_candidate": true,
       "last_modified": null,
       "imports": [
         "pytest",
@@ -644,6 +752,8 @@
         "src.analyzers.tree_sitter_analyzer",
         "src.agents.surveyor"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "test_language_router_extension_map",
@@ -669,6 +779,9 @@
       "classes": [],
       "loc": 59,
       "comment_ratio": 0.0263,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": false,
       "pagerank": 0.020908,
       "in_cycle": false,
@@ -681,8 +794,8 @@
       "purpose_statement": null,
       "domain_cluster": null,
       "complexity_score": 11.6,
-      "change_velocity_30d": 0,
-      "is_dead_code_candidate": false,
+      "change_velocity_30d": 1,
+      "is_dead_code_candidate": true,
       "last_modified": null,
       "imports": [
         "pytest",
@@ -692,6 +805,8 @@
         "src.analyzers.dag_config_parser",
         "src.agents.hydrologist"
       ],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [
         {
           "name": "test_python_data_flow_read_write",
@@ -717,6 +832,9 @@
       "classes": [],
       "loc": 66,
       "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": false,
       "pagerank": 0.020908,
       "in_cycle": false,
@@ -733,10 +851,15 @@
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [],
+      "star_imports": [],
+      "dynamic_imports": [],
       "public_functions": [],
       "classes": [],
       "loc": 1,
       "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
       "is_high_velocity": false,
       "pagerank": 0.020908,
       "in_cycle": false,

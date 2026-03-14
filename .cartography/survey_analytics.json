@@ -1,0 +1,50 @@
+{
+  "dead_code_candidates": [
+    "tests/test_models.py",
+    "tests/test_phase1.py",
+    "src/cli.py",
+    "tests/test_phase2.py"
+  ],
+  "high_velocity_files": [
+    "src/cli.py",
+    "src/orchestrator.py",
+    "src/__init__.py",
+    "src/agents/hydrologist.py",
+    "src/agents/surveyor.py",
+    "src/agents/__init__.py",
+    "src/analyzers/dag_config_parser.py",
+    "src/analyzers/python_data_flow.py",
+    "src/analyzers/sql_lineage.py",
+    "src/analyzers/tree_sitter_analyzer.py",
+    "src/analyzers/__init__.py",
+    "src/graph/knowledge_graph.py",
+    "src/graph/__init__.py",
+    "src/models/edges.py",
+    "src/models/nodes.py"
+  ],
+  "cycles": [],
+  "pagerank_top": [
+    "src/models/__init__.py",
+    "src/models/edges.py",
+    "src/models/nodes.py",
+    "src/analyzers/tree_sitter_analyzer.py",
+    "src/agents/surveyor.py",
+    "src/graph/knowledge_graph.py",
+    "src/agents/hydrologist.py",
+    "src/analyzers/dag_config_parser.py",
+    "src/analyzers/python_data_flow.py",
+    "src/analyzers/sql_lineage.py",
+    "src/orchestrator.py",
+    "src/cli.py",
+    "src/__init__.py",
+    "src/agents/__init__.py",
+    "src/analyzers/__init__.py",
+    "src/graph/__init__.py",
+    "tests/test_models.py",
+    "tests/test_phase1.py",
+    "tests/test_phase2.py",
+    "tests/__init__.py"
+  ],
+  "node_count": 20,
+  "edge_count": 31
+}

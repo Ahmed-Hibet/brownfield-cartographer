@@ -28,6 +28,8 @@ class ModuleNode(BaseModel):
     last_modified: str | None = None
     # Phase 1: static analysis extraction
     imports: list[str] = Field(default_factory=list)  # imported module names/paths
+    star_imports: list[str] = Field(default_factory=list)  # modules in "from x import *"
+    dynamic_imports: list[str] = Field(default_factory=list)  # importlib.import_module, __import__
     public_functions: list[dict[str, Any]] = Field(
         default_factory=list
     )  # [{"name": str, "signature": str|null}]
@@ -36,6 +38,10 @@ class ModuleNode(BaseModel):
     )  # [{"name": str, "bases": list[str]}]
     loc: int | None = None  # lines of code (non-empty, non-comment)
     comment_ratio: float | None = None  # comment lines / total lines
+    # SQL/YAML AST extraction (for pipeline-relevant structure)
+    sql_table_refs: list[str] = Field(default_factory=list)  # table refs from SQL AST
+    sql_query_shape: str | None = None  # e.g. "SELECT", "INSERT", "CTE"
+    pipeline_keys: list[str] = Field(default_factory=list)  # YAML top-level keys (models, sources, etc.)
 
 
 class DatasetNode(BaseModel):

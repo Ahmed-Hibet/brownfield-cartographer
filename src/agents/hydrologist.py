@@ -73,19 +73,22 @@ class Hydrologist:
         else:
             py_files, sql_files, yaml_files, airflow_candidates = self._collect_files()
 
-        # 1) SQL lineage (sqlglot)
-        for path in sql_files:
+        # 1) SQL lineage (sqlglot; includes first-class dbt ref/source from sql_lineage)
+        total_sql = len(sql_files)
+        for i, path in enumerate(sql_files):
+            if total_sql > 10 and (i == 0 or (i + 1) % 25 == 0 or i == total_sql - 1):
+                logger.info("Hydrologist: SQL %d/%d ...", i + 1, total_sql)
             try:
                 for node in self.sql_analyzer.parse_file(path):
-                    self._add_transformation(node, path)
-                # dbt ref()/source() from same SQL file
-                for node in self.dag_analyzer.extract_dbt_refs_sources_from_sql(path):
                     self._add_transformation(node, path)
             except Exception as e:
                 logger.warning("SQL lineage failed for %s: %s", path, e)
 
         # 2) Python data flow (pandas, SQLAlchemy, PySpark)
-        for path in py_files:
+        total_py = len(py_files)
+        for i, path in enumerate(py_files):
+            if total_py > 10 and (i == 0 or (i + 1) % 25 == 0 or i == total_py - 1):
+                logger.info("Hydrologist: Python %d/%d ...", i + 1, total_py)
             try:
                 for node in self.python_analyzer.parse_file(path):
                     self._add_transformation(node, path)

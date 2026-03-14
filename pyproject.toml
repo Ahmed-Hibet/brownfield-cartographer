@@ -21,6 +21,11 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+# Full AST for JavaScript/TypeScript (optional; analyzer degrades gracefully if not installed)
+js = [
+    "tree-sitter-javascript>=0.20.0",
+    "tree-sitter-typescript>=0.20.0",
+]
 # For Phase 3–4: Semanticist, Archivist, Navigator
 llm = [
     "langgraph>=0.2.0",

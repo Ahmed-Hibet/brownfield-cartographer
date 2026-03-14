@@ -192,8 +192,11 @@ class Surveyor:
             all_normalized.add(norm)
             path_to_norm[p] = norm
 
-        # 1) Analyze each module and add nodes
-        for path in file_paths:
+        # 1) Analyze each module and add nodes (per-file error isolation + progress)
+        total = len(file_paths)
+        for i, path in enumerate(file_paths):
+            if total > 10 and (i == 0 or (i + 1) % 25 == 0 or i == total - 1):
+                logger.info("Surveyor: %d/%d files ...", i + 1, total)
             try:
                 node = analyze_module(path)
             except Exception as e:
@@ -266,7 +269,73 @@ class Surveyor:
         except Exception as e:
             logger.warning("SCC failed: %s", e)
 
+        # 7) Dead code candidates: exported symbols (public_functions/classes) with no importers
+        try:
+            dead_candidates = self._compute_dead_code_candidates()
+            for norm in self.module_graph.nodes():
+                attrs = dict(self.module_graph.nodes[norm])
+                attrs["is_dead_code_candidate"] = norm in dead_candidates
+                self.module_graph.add_node(norm, **attrs)
+        except Exception as e:
+            logger.warning("Dead code detection failed: %s", e)
+
         return self.module_graph
+
+    def _compute_dead_code_candidates(self) -> set[str]:
+        """
+        Modules that export symbols (public_functions or classes) but have no incoming import edges.
+        Excludes common entry points (e.g. __main__, cli.py, main.py at repo root).
+        """
+        entry_stems = {"__main__", "cli", "main", "run", "app"}
+        candidates: set[str] = set()
+        for norm in self.module_graph.nodes():
+            in_degree = self.module_graph.in_degree(norm)
+            if in_degree > 0:
+                continue
+            node_data = self.module_graph.nodes.get(norm, {})
+            has_exports = bool(
+                node_data.get("public_functions") or node_data.get("classes")
+            )
+            if not has_exports:
+                continue
+            # Exclude likely entry points
+            stem = Path(norm).stem.lower()
+            if stem in entry_stems and "/" not in norm.replace("\\", "/").rstrip("/"):
+                continue
+            if norm.endswith("__main__.py") or "/__main__.py" in norm.replace("\\", "/"):
+                continue
+            candidates.add(norm)
+        return candidates
+
+    def get_survey_analytics(self) -> dict:
+        """
+        Structured artifact for downstream agents: dead code candidates, high-velocity files,
+        cycles, and top PageRank modules.
+        """
+        dead = list(self._compute_dead_code_candidates())
+        high_velocity = [
+            n for n in self.module_graph.nodes()
+            if self.module_graph.nodes.get(n, {}).get("is_high_velocity")
+        ]
+        try:
+            sccs = list(nx.strongly_connected_components(self.module_graph))
+            cycles = [list(s) for s in sccs if len(s) > 1]
+        except Exception:
+            cycles = []
+        pagerank = {}
+        for n in self.module_graph.nodes():
+            pr = self.module_graph.nodes.get(n, {}).get("pagerank")
+            if pr is not None:
+                pagerank[n] = pr
+        top_pagerank = sorted(pagerank.keys(), key=lambda x: -pagerank.get(x, 0))[:20]
+        return {
+            "dead_code_candidates": dead,
+            "high_velocity_files": high_velocity,
+            "cycles": cycles,
+            "pagerank_top": top_pagerank,
+            "node_count": self.module_graph.number_of_nodes(),
+            "edge_count": self.module_graph.number_of_edges(),
+        }
 
     def _collect_source_files(self) -> list[Path]:
         """Collect Python, SQL, YAML (etc.) files under repo_root, excluding .venv/.git."""
