@@ -22,6 +22,7 @@ class ModuleNode(BaseModel):
     language: str
     purpose_statement: str | None = None
     domain_cluster: str | None = None
+    documentation_drift: bool | None = None  # True if docstring contradicts implementation (Phase 3)
     complexity_score: float | None = None
     change_velocity_30d: int | None = None
     is_dead_code_candidate: bool = False

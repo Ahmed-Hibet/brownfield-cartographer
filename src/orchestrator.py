@@ -6,6 +6,7 @@ from pathlib import Path
 
 from src.agents.surveyor import Surveyor
 from src.agents.hydrologist import Hydrologist
+from src.agents.semanticist import Semanticist
 from src.graph.knowledge_graph import KnowledgeGraph
 
 logger = logging.getLogger(__name__)
@@ -13,9 +14,8 @@ logger = logging.getLogger(__name__)
 
 def run_analysis(repo_path: str | Path, output_dir: str | Path | None = None) -> dict[str, Path]:
     """
-    Run Surveyor then Hydrologist on the repo; write module_graph.json, survey_analytics.json,
-    and lineage_graph.json to .cartography/ (or output_dir). Returns paths to written artifacts.
-    Per-file errors are isolated and logged; progress is reported for large repos.
+    Run Surveyor -> Hydrologist -> Semanticist; write module_graph.json, survey_analytics.json,
+    lineage_graph.json, day_one_brief.json. Per-file errors isolated; progress reported.
     """
     repo_path = Path(repo_path)
     output_dir = Path(output_dir) if output_dir else repo_path / ".cartography"
@@ -40,8 +40,17 @@ def run_analysis(repo_path: str | Path, output_dir: str | Path | None = None) ->
     lineage_graph_path = output_dir / "lineage_graph.json"
     kg_lineage.write_json(lineage_graph_path)
 
+    logger.info("Semanticist: purpose statements, doc drift, domain clustering, Day-One answers ...")
+    semanticist = Semanticist(repo_path)
+    day_one_answers = semanticist.analyze(module_graph, lineage_graph)
+    day_one_path = output_dir / "day_one_brief.json"
+    with open(day_one_path, "w", encoding="utf-8") as f:
+        json.dump(day_one_answers, f, indent=2)
+    KnowledgeGraph(module_graph).write_json(module_graph_path)
+
     return {
         "module_graph": module_graph_path,
         "survey_analytics": survey_analytics_path,
         "lineage_graph": lineage_graph_path,
+        "day_one_brief": day_one_path,
     }

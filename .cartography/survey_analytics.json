@@ -19,7 +19,6 @@
     "src/analyzers/__init__.py",
     "src/graph/knowledge_graph.py",
     "src/graph/__init__.py",
-    "src/models/edges.py",
     "src/models/nodes.py"
   ],
   "cycles": [],
@@ -28,13 +27,14 @@
     "src/models/edges.py",
     "src/models/nodes.py",
     "src/analyzers/tree_sitter_analyzer.py",
-    "src/agents/surveyor.py",
     "src/graph/knowledge_graph.py",
+    "src/agents/surveyor.py",
     "src/agents/hydrologist.py",
+    "src/orchestrator.py",
     "src/analyzers/dag_config_parser.py",
     "src/analyzers/python_data_flow.py",
     "src/analyzers/sql_lineage.py",
-    "src/orchestrator.py",
+    "src/agents/semanticist.py",
     "src/cli.py",
     "src/__init__.py",
     "src/agents/__init__.py",
@@ -42,9 +42,8 @@
     "src/graph/__init__.py",
     "tests/test_models.py",
     "tests/test_phase1.py",
-    "tests/test_phase2.py",
-    "tests/__init__.py"
+    "tests/test_phase2.py"
   ],
-  "node_count": 20,
-  "edge_count": 31
+  "node_count": 21,
+  "edge_count": 33
 }
