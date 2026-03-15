@@ -68,11 +68,13 @@ def analyze(
         help="Output directory for .cartography artifacts (default: <repo>/.cartography or cwd).",
         path_type=Path,
     ),
+    incremental: bool = typer.Option(False, "--incremental", "-i", help="Re-analyze only files changed since last run."),
     verbose: bool = typer.Option(False, "--verbose", "-v", help="Verbose logging (per-file details)."),
 ) -> None:
     """
-    Run full analysis pipeline (Surveyor + Hydrologist) and write artifacts to .cartography/.
-    Supports GitHub URL: clones to a temp dir, runs analysis, writes artifacts to --output or cwd.
+    Run full pipeline (Surveyor -> Hydrologist -> Semanticist -> Archivist). Writes CODEBASE.md,
+    onboarding_brief.md, module_graph.json, lineage_graph.json, day_one_brief.json,
+    semantic_index/, cartography_trace.jsonl. Use --incremental to update only changed files.
     """
     repo_path: Path
     cleanup_clone = False
@@ -95,8 +97,8 @@ def analyze(
         logging.getLogger().setLevel(logging.DEBUG)
 
     try:
-        typer.echo("Running analysis pipeline (Surveyor -> Hydrologist) ...")
-        artifacts = run_analysis(repo_path, out_dir)
+        typer.echo("Running analysis pipeline (Surveyor -> Hydrologist -> Semanticist -> Archivist) ...")
+        artifacts = run_analysis(repo_path, out_dir, incremental=incremental)
         typer.echo(f"Analysis complete. Artifacts written to: {out_dir}")
         for name, path in artifacts.items():
             typer.echo(f"  - {name}: {path}")
@@ -107,6 +109,25 @@ def analyze(
     finally:
         if cleanup_clone and repo_path.exists():
             shutil.rmtree(repo_path, ignore_errors=True)
+
+
+@app.command()
+def query(
+    cartography_dir: Path = typer.Argument(
+        ...,
+        help="Path to .cartography directory (e.g. .cartography or /path/to/repo/.cartography).",
+        path_type=Path,
+    ),
+) -> None:
+    """
+    Interactive query mode: load cartography artifacts and run Navigator tools.
+    Commands: find <concept> | lineage <dataset> [upstream|downstream] | blast <module> [downstream|upstream] | explain <path> | quit
+    """
+    if not cartography_dir.exists() or not cartography_dir.is_dir():
+        typer.echo(f"Error: directory does not exist: {cartography_dir}")
+        raise typer.Exit(1)
+    from src.agents.navigator import run_query_repl
+    run_query_repl(cartography_dir)
 
 
 if __name__ == "__main__":

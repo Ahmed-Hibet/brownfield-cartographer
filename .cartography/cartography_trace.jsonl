@@ -1,0 +1,7 @@
+{"action": "analyze", "agent": "surveyor", "nodes": 24, "edges": 39}
+{"action": "analyze", "agent": "hydrologist", "nodes": 10}
+{"action": "analyze", "agent": "semanticist", "day_one_questions": 5}
+{"action": "write_artifact", "agent": "archivist", "artifact": "CODEBASE.md", "path": ".cartography\\CODEBASE.md"}
+{"action": "write_artifact", "agent": "archivist", "artifact": "onboarding_brief.md", "path": ".cartography\\onboarding_brief.md"}
+{"action": "write_artifact", "agent": "archivist", "artifact": "semantic_index", "path": ".cartography\\semantic_index"}
+{"action": "run_complete", "agent": "archivist", "artifacts": ["CODEBASE.md", "onboarding_brief.md", "semantic_index"]}

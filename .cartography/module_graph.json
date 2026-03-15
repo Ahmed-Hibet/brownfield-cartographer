@@ -9,7 +9,7 @@
       "purpose_statement": null,
       "domain_cluster": null,
       "documentation_drift": null,
-      "complexity_score": 10.6,
+      "complexity_score": 13.5,
       "change_velocity_30d": 2,
       "is_dead_code_candidate": true,
       "last_modified": null,
@@ -28,16 +28,20 @@
         {
           "name": "analyze",
           "signature": "def analyze(\r\n    repo)"
+        },
+        {
+          "name": "query",
+          "signature": "def query(\r\n    cartography_dir)"
         }
       ],
       "classes": [],
-      "loc": 96,
-      "comment_ratio": 0.0088,
+      "loc": 115,
+      "comment_ratio": 0.0075,
       "sql_table_refs": [],
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.020945,
+      "pagerank": 0.018837,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/cli.py"
@@ -48,17 +52,19 @@
       "purpose_statement": null,
       "domain_cluster": null,
       "documentation_drift": null,
-      "complexity_score": 5.6,
-      "change_velocity_30d": 2,
+      "complexity_score": 14.7,
+      "change_velocity_30d": 3,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
         "json",
         "logging",
+        "subprocess",
         "pathlib",
         "src.agents.surveyor",
         "src.agents.hydrologist",
         "src.agents.semanticist",
+        "src.agents.archivist",
         "src.graph.knowledge_graph"
       ],
       "star_imports": [],
@@ -66,17 +72,17 @@
       "public_functions": [
         {
           "name": "run_analysis",
-          "signature": "def run_analysis(repo_path)"
+          "signature": "def run_analysis(\r\n    repo_path)"
         }
       ],
       "classes": [],
-      "loc": 46,
-      "comment_ratio": 0.0,
+      "loc": 137,
+      "comment_ratio": 0.0064,
       "sql_table_refs": [],
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.038749,
+      "pagerank": 0.034849,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/orchestrator.py"
@@ -102,10 +108,68 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.020945,
+      "pagerank": 0.018837,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/__init__.py"
+    },
+    {
+      "path": "src/agents/archivist.py",
+      "language": "python",
+      "purpose_statement": null,
+      "domain_cluster": null,
+      "documentation_drift": null,
+      "complexity_score": 26.7,
+      "change_velocity_30d": 0,
+      "is_dead_code_candidate": false,
+      "last_modified": null,
+      "imports": [
+        "json",
+        "logging",
+        "pathlib",
+        "typing",
+        "src.graph.knowledge_graph"
+      ],
+      "star_imports": [],
+      "dynamic_imports": [],
+      "public_functions": [
+        {
+          "name": "generate_CODEBASE_md",
+          "signature": "def generate_CODEBASE_md(\r\n    module_graph)"
+        },
+        {
+          "name": "generate_onboarding_brief_md",
+          "signature": "def generate_onboarding_brief_md(day_one_answers)"
+        },
+        {
+          "name": "write_semantic_index",
+          "signature": "def write_semantic_index(module_graph)"
+        },
+        {
+          "name": "append_trace_entry",
+          "signature": "def append_trace_entry(trace_path)"
+        },
+        {
+          "name": "run",
+          "signature": "def run(\r\n        self,\r\n        module_graph)"
+        }
+      ],
+      "classes": [
+        {
+          "name": "Archivist",
+          "bases": []
+        }
+      ],
+      "loc": 197,
+      "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
+      "is_high_velocity": false,
+      "pagerank": 0.027964,
+      "in_cycle": false,
+      "cycle_id": null,
+      "id": "src/agents/archivist.py"
     },
     {
       "path": "src/agents/hydrologist.py",
@@ -157,10 +221,76 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.039565,
+      "pagerank": 0.031967,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/agents/hydrologist.py"
+    },
+    {
+      "path": "src/agents/navigator.py",
+      "language": "python",
+      "purpose_statement": null,
+      "domain_cluster": null,
+      "documentation_drift": null,
+      "complexity_score": 33.5,
+      "change_velocity_30d": 0,
+      "is_dead_code_candidate": false,
+      "last_modified": null,
+      "imports": [
+        "json",
+        "logging",
+        "pathlib",
+        "typing",
+        "src.graph.knowledge_graph"
+      ],
+      "star_imports": [],
+      "dynamic_imports": [],
+      "public_functions": [
+        {
+          "name": "module_graph",
+          "signature": "def module_graph(self) -> nx.DiGraph)"
+        },
+        {
+          "name": "lineage_graph",
+          "signature": "def lineage_graph(self) -> nx.DiGraph)"
+        },
+        {
+          "name": "find_implementation",
+          "signature": "def find_implementation(self, concept)"
+        },
+        {
+          "name": "trace_lineage",
+          "signature": "def trace_lineage(self, dataset)"
+        },
+        {
+          "name": "blast_radius",
+          "signature": "def blast_radius(self, module_path)"
+        },
+        {
+          "name": "explain_module",
+          "signature": "def explain_module(self, path)"
+        },
+        {
+          "name": "run_query_repl",
+          "signature": "def run_query_repl(cartography_dir)"
+        }
+      ],
+      "classes": [
+        {
+          "name": "Navigator",
+          "bases": []
+        }
+      ],
+      "loc": 245,
+      "comment_ratio": 0.0113,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
+      "is_high_velocity": false,
+      "pagerank": 0.022039,
+      "in_cycle": false,
+      "cycle_id": null,
+      "id": "src/agents/navigator.py"
     },
     {
       "path": "src/agents/semanticist.py",
@@ -169,7 +299,7 @@
       "domain_cluster": null,
       "documentation_drift": null,
       "complexity_score": 52.1,
-      "change_velocity_30d": 0,
+      "change_velocity_30d": 1,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
@@ -243,8 +373,8 @@
       "sql_table_refs": [],
       "sql_query_shape": null,
       "pipeline_keys": [],
-      "is_high_velocity": false,
-      "pagerank": 0.035114,
+      "is_high_velocity": true,
+      "pagerank": 0.043975,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/agents/semanticist.py"
@@ -302,7 +432,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.044015,
+      "pagerank": 0.03597,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/agents/surveyor.py"
@@ -313,26 +443,28 @@
       "purpose_statement": null,
       "domain_cluster": null,
       "documentation_drift": null,
-      "complexity_score": 0.5,
-      "change_velocity_30d": 1,
+      "complexity_score": 0.7,
+      "change_velocity_30d": 2,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
         "src.agents.surveyor",
         "src.agents.hydrologist",
-        "src.agents.semanticist"
+        "src.agents.semanticist",
+        "src.agents.archivist",
+        "src.agents.navigator"
       ],
       "star_imports": [],
       "dynamic_imports": [],
       "public_functions": [],
       "classes": [],
-      "loc": 5,
+      "loc": 7,
       "comment_ratio": 0.0,
       "sql_table_refs": [],
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.020945,
+      "pagerank": 0.018837,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/agents/__init__.py"
@@ -383,7 +515,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.038254,
+      "pagerank": 0.033636,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/analyzers/dag_config_parser.py"
@@ -430,7 +562,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.038254,
+      "pagerank": 0.033636,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/analyzers/python_data_flow.py"
@@ -473,7 +605,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.038254,
+      "pagerank": 0.033636,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/analyzers/sql_lineage.py"
@@ -547,7 +679,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.069262,
+      "pagerank": 0.060429,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/analyzers/tree_sitter_analyzer.py"
@@ -578,7 +710,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.020945,
+      "pagerank": 0.018837,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/analyzers/__init__.py"
@@ -634,7 +766,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.046983,
+      "pagerank": 0.083277,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/graph/knowledge_graph.py"
@@ -662,7 +794,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.020945,
+      "pagerank": 0.018837,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/graph/__init__.py"
@@ -705,7 +837,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": false,
-      "pagerank": 0.108508,
+      "pagerank": 0.09524,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/models/edges.py"
@@ -717,7 +849,7 @@
       "domain_cluster": null,
       "documentation_drift": null,
       "complexity_score": 15.9,
-      "change_velocity_30d": 3,
+      "change_velocity_30d": 4,
       "is_dead_code_candidate": false,
       "last_modified": null,
       "imports": [
@@ -767,7 +899,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": true,
-      "pagerank": 0.108508,
+      "pagerank": 0.09524,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/models/nodes.py"
@@ -796,7 +928,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": false,
-      "pagerank": 0.206025,
+      "pagerank": 0.179772,
       "in_cycle": false,
       "cycle_id": null,
       "id": "src/models/__init__.py"
@@ -838,7 +970,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": false,
-      "pagerank": 0.020945,
+      "pagerank": 0.018837,
       "in_cycle": false,
       "cycle_id": null,
       "id": "tests/test_models.py"
@@ -890,7 +1022,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": false,
-      "pagerank": 0.020945,
+      "pagerank": 0.018837,
       "in_cycle": false,
       "cycle_id": null,
       "id": "tests/test_phase1.py"
@@ -944,10 +1076,65 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": false,
-      "pagerank": 0.020945,
+      "pagerank": 0.018837,
       "in_cycle": false,
       "cycle_id": null,
       "id": "tests/test_phase2.py"
+    },
+    {
+      "path": "tests/test_phase3.py",
+      "language": "python",
+      "purpose_statement": null,
+      "domain_cluster": null,
+      "documentation_drift": null,
+      "complexity_score": 11.4,
+      "change_velocity_30d": 1,
+      "is_dead_code_candidate": true,
+      "last_modified": null,
+      "imports": [
+        "pathlib",
+        "pytest",
+        "src.agents.semanticist"
+      ],
+      "star_imports": [],
+      "dynamic_imports": [],
+      "public_functions": [
+        {
+          "name": "test_context_window_budget_estimate_and_spend",
+          "signature": "def test_context_window_budget_estimate_and_spend() -> None)"
+        },
+        {
+          "name": "test_extract_module_docstring",
+          "signature": "def test_extract_module_docstring() -> None)"
+        },
+        {
+          "name": "test_day_one_questions_constant",
+          "signature": "def test_day_one_questions_constant() -> None)"
+        },
+        {
+          "name": "test_placeholder_day_one_answers",
+          "signature": "def test_placeholder_day_one_answers() -> None)"
+        },
+        {
+          "name": "test_semanticist_analyze_without_api_key_returns_placeholders",
+          "signature": "def test_semanticist_analyze_without_api_key_returns_placeholders(tmp_path)"
+        },
+        {
+          "name": "test_semanticist_cluster_into_domains_adds_domain_labels",
+          "signature": "def test_semanticist_cluster_into_domains_adds_domain_labels(tmp_path)"
+        }
+      ],
+      "classes": [],
+      "loc": 54,
+      "comment_ratio": 0.0,
+      "sql_table_refs": [],
+      "sql_query_shape": null,
+      "pipeline_keys": [],
+      "is_high_velocity": false,
+      "pagerank": 0.018837,
+      "in_cycle": false,
+      "cycle_id": null,
+      "id": "tests/test_phase3.py"
     },
     {
       "path": "tests/__init__.py",
@@ -970,7 +1157,7 @@
       "sql_query_shape": null,
       "pipeline_keys": [],
       "is_high_velocity": false,
-      "pagerank": 0.020945,
+      "pagerank": 0.018837,
       "in_cycle": false,
       "cycle_id": null,
       "id": "tests/__init__.py"
@@ -1000,6 +1187,16 @@
     {
       "weight": 1,
       "source": "src/orchestrator.py",
+      "target": "src/agents/archivist.py"
+    },
+    {
+      "weight": 1,
+      "source": "src/orchestrator.py",
+      "target": "src/graph/knowledge_graph.py"
+    },
+    {
+      "weight": 1,
+      "source": "src/agents/archivist.py",
       "target": "src/graph/knowledge_graph.py"
     },
     {
@@ -1021,6 +1218,11 @@
       "weight": 1,
       "source": "src/agents/hydrologist.py",
       "target": "src/models/__init__.py"
+    },
+    {
+      "weight": 1,
+      "source": "src/agents/navigator.py",
+      "target": "src/graph/knowledge_graph.py"
     },
     {
       "weight": 1,
@@ -1046,6 +1248,16 @@
       "weight": 1,
       "source": "src/agents/__init__.py",
       "target": "src/agents/semanticist.py"
+    },
+    {
+      "weight": 1,
+      "source": "src/agents/__init__.py",
+      "target": "src/agents/archivist.py"
+    },
+    {
+      "weight": 1,
+      "source": "src/agents/__init__.py",
+      "target": "src/agents/navigator.py"
     },
     {
       "weight": 1,
@@ -1141,6 +1353,11 @@
       "weight": 1,
       "source": "tests/test_phase2.py",
       "target": "src/agents/hydrologist.py"
+    },
+    {
+      "weight": 1,
+      "source": "tests/test_phase3.py",
+      "target": "src/agents/semanticist.py"
     }
   ]
 }

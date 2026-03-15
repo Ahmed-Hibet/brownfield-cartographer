@@ -338,17 +338,22 @@ class Surveyor:
         }
 
     def _collect_source_files(self) -> list[Path]:
-        """Collect Python, SQL, YAML (etc.) files under repo_root, excluding .venv/.git."""
+        """Collect Python, SQL, YAML (etc.) files under repo_root, excluding .venv, .git, node_modules.
+        Uses os.walk with dirs pruned so we never descend into skip_dirs (avoids FileNotFoundError on
+        Windows when node_modules has very long or broken symlink paths)."""
+        import os
         exts = {".py", ".sql", ".yaml", ".yml"}
         skip_dirs = {".git", ".venv", "node_modules", "__pycache__", ".pytest_cache"}
         files: list[Path] = []
-        for p in self.repo_root.rglob("*"):
-            if p.is_file() and p.suffix.lower() in exts:
-                try:
-                    rel = p.relative_to(self.repo_root)
-                    if any(part in skip_dirs for part in rel.parts):
+        root_str = str(self.repo_root.resolve())
+        for dirpath, dirnames, filenames in os.walk(root_str, topdown=True):
+            dirnames[:] = [d for d in dirnames if d not in skip_dirs]
+            for name in filenames:
+                if Path(name).suffix.lower() in exts:
+                    p = Path(dirpath) / name
+                    try:
+                        p.relative_to(self.repo_root)
+                    except ValueError:
                         continue
                     files.append(p)
-                except ValueError:
-                    pass
         return files

@@ -1,0 +1,14 @@
+{
+  "q1": "Primary ingestion path not inferred (run with OPENROUTER_API_KEY for LLM synthesis).",
+  "q2": "Critical outputs not inferred (run with OPENROUTER_API_KEY).",
+  "q3": "Blast radius not inferred (run with OPENROUTER_API_KEY).",
+  "q4": "Business logic distribution not inferred (run with OPENROUTER_API_KEY).",
+  "q5": "Velocity map from survey_analytics high_velocity_files (run with API key for full synthesis).",
+  "questions": [
+    "What is the primary data ingestion path?",
+    "What are the 3-5 most critical output datasets/endpoints?",
+    "What is the blast radius if the most critical module fails?",
+    "Where is the business logic concentrated vs. distributed?",
+    "What has changed most frequently in the last 90 days (git velocity map)?"
+  ]
+}

@@ -9,6 +9,130 @@
       ],
       "target_datasets": [],
       "transformation_type": "python",
+      "source_file": "src\\orchestrator.py",
+      "line_range": [
+        88,
+        88
+      ],
+      "sql_query_if_applicable": null,
+      "source_file_norm": "src/orchestrator.py",
+      "id": "T_1_src/orchestrator.py:88-88"
+    },
+    {
+      "source_datasets": [
+        "dynamic reference, cannot resolve"
+      ],
+      "target_datasets": [],
+      "transformation_type": "python",
+      "source_file": "src\\orchestrator.py",
+      "line_range": [
+        110,
+        110
+      ],
+      "sql_query_if_applicable": null,
+      "source_file_norm": "src/orchestrator.py",
+      "id": "T_2_src/orchestrator.py:110-110"
+    },
+    {
+      "source_datasets": [],
+      "target_datasets": [
+        "dynamic reference, cannot resolve"
+      ],
+      "transformation_type": "python",
+      "source_file": "src\\agents\\archivist.py",
+      "line_range": [
+        174,
+        174
+      ],
+      "sql_query_if_applicable": null,
+      "source_file_norm": "src/agents/archivist.py",
+      "id": "T_3_src/agents/archivist.py:174-174"
+    },
+    {
+      "storage_type": "table",
+      "id": "dynamic reference, cannot resolve"
+    },
+    {
+      "source_datasets": [
+        "dynamic reference, cannot resolve"
+      ],
+      "target_datasets": [],
+      "transformation_type": "python",
+      "source_file": "src\\agents\\navigator.py",
+      "line_range": [
+        45,
+        45
+      ],
+      "sql_query_if_applicable": null,
+      "source_file_norm": "src/agents/navigator.py",
+      "id": "T_4_src/agents/navigator.py:45-45"
+    },
+    {
+      "source_datasets": [
+        "dynamic reference, cannot resolve"
+      ],
+      "target_datasets": [],
+      "transformation_type": "python",
+      "source_file": "src\\agents\\navigator.py",
+      "line_range": [
+        49,
+        49
+      ],
+      "sql_query_if_applicable": null,
+      "source_file_norm": "src/agents/navigator.py",
+      "id": "T_5_src/agents/navigator.py:49-49"
+    },
+    {
+      "source_datasets": [
+        "dynamic reference, cannot resolve"
+      ],
+      "target_datasets": [],
+      "transformation_type": "python",
+      "source_file": "src\\agents\\navigator.py",
+      "line_range": [
+        54,
+        54
+      ],
+      "sql_query_if_applicable": null,
+      "source_file_norm": "src/agents/navigator.py",
+      "id": "T_6_src/agents/navigator.py:54-54"
+    },
+    {
+      "source_datasets": [
+        "dynamic reference, cannot resolve"
+      ],
+      "target_datasets": [],
+      "transformation_type": "python",
+      "source_file": "src\\agents\\navigator.py",
+      "line_range": [
+        59,
+        59
+      ],
+      "sql_query_if_applicable": null,
+      "source_file_norm": "src/agents/navigator.py",
+      "id": "T_7_src/agents/navigator.py:59-59"
+    },
+    {
+      "source_datasets": [
+        "dynamic reference, cannot resolve"
+      ],
+      "target_datasets": [],
+      "transformation_type": "python",
+      "source_file": "src\\agents\\navigator.py",
+      "line_range": [
+        64,
+        64
+      ],
+      "sql_query_if_applicable": null,
+      "source_file_norm": "src/agents/navigator.py",
+      "id": "T_8_src/agents/navigator.py:64-64"
+    },
+    {
+      "source_datasets": [
+        "dynamic reference, cannot resolve"
+      ],
+      "target_datasets": [],
+      "transformation_type": "python",
       "source_file": "src\\graph\\knowledge_graph.py",
       "line_range": [
         44,
@@ -16,8 +140,14 @@
       ],
       "sql_query_if_applicable": null,
       "source_file_norm": "src/graph/knowledge_graph.py",
-      "id": "T_1_src/graph/knowledge_graph.py:44-44"
+      "id": "T_9_src/graph/knowledge_graph.py:44-44"
     }
   ],
-  "edges": []
+  "edges": [
+    {
+      "edge_type": "PRODUCES",
+      "source": "T_3_src/agents/archivist.py:174-174",
+      "target": "dynamic reference, cannot resolve"
+    }
+  ]
 }

@@ -1,0 +1,475 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "source_datasets": [
+        "\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0001_add_timeout_to_runs.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"runs\" ADD COLUMN \"timeout\" integer DEFAULT 5 NOT NULL;",
+      "source_file_norm": "packages/evals/src/db/migrations/0001_add_timeout_to_runs.sql",
+      "id": "T_1_packages/evals/src/db/migrations/0001_add_timeout_to_runs.sql"
+    },
+    {
+      "storage_type": "table",
+      "id": "\"runs\""
+    },
+    {
+      "source_datasets": [
+        "\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0001_lowly_captain_flint.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"runs\" ADD COLUMN \"timeout\" integer DEFAULT 5 NOT NULL;",
+      "source_file_norm": "packages/evals/src/db/migrations/0001_lowly_captain_flint.sql",
+      "id": "T_2_packages/evals/src/db/migrations/0001_lowly_captain_flint.sql"
+    },
+    {
+      "source_datasets": [
+        "\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0002_bouncy_blazing_skull.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"runs\" ADD COLUMN \"name\" text;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"contextWindow\" integer;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"inputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"outputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheWritesPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheReadsPrice\" real;",
+      "source_file_norm": "packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql",
+      "id": "T_3_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "source_datasets": [
+        "\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0002_bouncy_blazing_skull.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"runs\" ADD COLUMN \"name\" text;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"contextWindow\" integer;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"inputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"outputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheWritesPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheReadsPrice\" real;",
+      "source_file_norm": "packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql",
+      "id": "T_4_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "source_datasets": [
+        "\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0002_bouncy_blazing_skull.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"runs\" ADD COLUMN \"name\" text;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"contextWindow\" integer;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"inputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"outputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheWritesPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheReadsPrice\" real;",
+      "source_file_norm": "packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql",
+      "id": "T_5_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "source_datasets": [
+        "\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0002_bouncy_blazing_skull.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"runs\" ADD COLUMN \"name\" text;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"contextWindow\" integer;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"inputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"outputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheWritesPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheReadsPrice\" real;",
+      "source_file_norm": "packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql",
+      "id": "T_6_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "source_datasets": [
+        "\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0002_bouncy_blazing_skull.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"runs\" ADD COLUMN \"name\" text;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"contextWindow\" integer;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"inputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"outputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheWritesPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheReadsPrice\" real;",
+      "source_file_norm": "packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql",
+      "id": "T_7_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "source_datasets": [
+        "\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0002_bouncy_blazing_skull.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"runs\" ADD COLUMN \"name\" text;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"contextWindow\" integer;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"inputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"outputPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheWritesPrice\" real;--> statement-breakpoint\nALTER TABLE \"runs\" ADD COLUMN \"cacheReadsPrice\" real;",
+      "source_file_norm": "packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql",
+      "id": "T_8_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "source_datasets": [
+        "\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0003_simple_retro_girl.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"runs\" ADD COLUMN \"jobToken\" text;",
+      "source_file_norm": "packages/evals/src/db/migrations/0003_simple_retro_girl.sql",
+      "id": "T_9_packages/evals/src/db/migrations/0003_simple_retro_girl.sql"
+    },
+    {
+      "source_datasets": [
+        "\"tasks_language_exercise_idx\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0004_sloppy_black_knight.sql",
+      "line_range": [
+        1,
+        1
+      ],
+      "sql_query_if_applicable": "DROP INDEX \"tasks_language_exercise_idx\";--> statement-breakpoint\nALTER TABLE \"tasks\" ADD COLUMN \"iteration\" integer DEFAULT 1 NOT NULL;--> statement-breakpoint\nCREATE UNIQUE INDEX \"tasks_language_exercise_iteration_idx\" ON \"tasks\" USING btree (\"run_id\",\"language\",\"exercise\",\"iteration\");",
+      "source_file_norm": "packages/evals/src/db/migrations/0004_sloppy_black_knight.sql",
+      "id": "T_10_packages/evals/src/db/migrations/0004_sloppy_black_knight.sql:1-1"
+    },
+    {
+      "storage_type": "table",
+      "id": "\"tasks_language_exercise_idx\""
+    },
+    {
+      "source_datasets": [
+        "\"tasks\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0004_sloppy_black_knight.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "DROP INDEX \"tasks_language_exercise_idx\";--> statement-breakpoint\nALTER TABLE \"tasks\" ADD COLUMN \"iteration\" integer DEFAULT 1 NOT NULL;--> statement-breakpoint\nCREATE UNIQUE INDEX \"tasks_language_exercise_iteration_idx\" ON \"tasks\" USING btree (\"run_id\",\"language\",\"exercise\",\"iteration\");",
+      "source_file_norm": "packages/evals/src/db/migrations/0004_sloppy_black_knight.sql",
+      "id": "T_11_packages/evals/src/db/migrations/0004_sloppy_black_knight.sql"
+    },
+    {
+      "storage_type": "table",
+      "id": "\"tasks\""
+    },
+    {
+      "source_datasets": [
+        "\"tasks\""
+      ],
+      "target_datasets": [
+        "\"tasks_language_exercise_iteration_idx\" ON \"tasks\" USING btree(\"run_id\", \"language\", \"exercise\", \"iteration\")"
+      ],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0004_sloppy_black_knight.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "DROP INDEX \"tasks_language_exercise_idx\";--> statement-breakpoint\nALTER TABLE \"tasks\" ADD COLUMN \"iteration\" integer DEFAULT 1 NOT NULL;--> statement-breakpoint\nCREATE UNIQUE INDEX \"tasks_language_exercise_iteration_idx\" ON \"tasks\" USING btree (\"run_id\",\"language\",\"exercise\",\"iteration\");",
+      "source_file_norm": "packages/evals/src/db/migrations/0004_sloppy_black_knight.sql",
+      "id": "T_12_packages/evals/src/db/migrations/0004_sloppy_black_knight.sql"
+    },
+    {
+      "storage_type": "table",
+      "id": "\"tasks_language_exercise_iteration_idx\" ON \"tasks\" USING btree(\"run_id\", \"language\", \"exercise\", \"iteration\")"
+    },
+    {
+      "source_datasets": [
+        "\"tasks\"",
+        "\"tasks_run_id_runs_id_fk\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0005_strong_skrulls.sql",
+      "line_range": [
+        1,
+        1
+      ],
+      "sql_query_if_applicable": "ALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_task_id_tasks_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\" FOREIGN KEY (\"task_metrics_id\") REFERENCES \"public\".\"taskMetrics\"(\"id\") ON DELETE set null ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_task_id_tasks_id_fk\" FOREIGN KEY (\"task_id\") REFERENCES \"public\".\"tasks\"(\"id\") ON DELETE cascade ON UPDATE no action;",
+      "source_file_norm": "packages/evals/src/db/migrations/0005_strong_skrulls.sql",
+      "id": "T_13_packages/evals/src/db/migrations/0005_strong_skrulls.sql:1-1"
+    },
+    {
+      "storage_type": "table",
+      "id": "\"tasks_run_id_runs_id_fk\""
+    },
+    {
+      "source_datasets": [
+        "\"tasks\"",
+        "\"tasks_task_metrics_id_taskMetrics_id_fk\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0005_strong_skrulls.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_task_id_tasks_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\" FOREIGN KEY (\"task_metrics_id\") REFERENCES \"public\".\"taskMetrics\"(\"id\") ON DELETE set null ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_task_id_tasks_id_fk\" FOREIGN KEY (\"task_id\") REFERENCES \"public\".\"tasks\"(\"id\") ON DELETE cascade ON UPDATE no action;",
+      "source_file_norm": "packages/evals/src/db/migrations/0005_strong_skrulls.sql",
+      "id": "T_14_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "storage_type": "table",
+      "id": "\"tasks_task_metrics_id_taskMetrics_id_fk\""
+    },
+    {
+      "source_datasets": [
+        "\"toolErrors\"",
+        "\"toolErrors_run_id_runs_id_fk\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0005_strong_skrulls.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_task_id_tasks_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\" FOREIGN KEY (\"task_metrics_id\") REFERENCES \"public\".\"taskMetrics\"(\"id\") ON DELETE set null ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_task_id_tasks_id_fk\" FOREIGN KEY (\"task_id\") REFERENCES \"public\".\"tasks\"(\"id\") ON DELETE cascade ON UPDATE no action;",
+      "source_file_norm": "packages/evals/src/db/migrations/0005_strong_skrulls.sql",
+      "id": "T_15_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "storage_type": "table",
+      "id": "\"toolErrors\""
+    },
+    {
+      "storage_type": "table",
+      "id": "\"toolErrors_run_id_runs_id_fk\""
+    },
+    {
+      "source_datasets": [
+        "\"toolErrors_task_id_tasks_id_fk\"",
+        "\"toolErrors\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0005_strong_skrulls.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_task_id_tasks_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\" FOREIGN KEY (\"task_metrics_id\") REFERENCES \"public\".\"taskMetrics\"(\"id\") ON DELETE set null ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_task_id_tasks_id_fk\" FOREIGN KEY (\"task_id\") REFERENCES \"public\".\"tasks\"(\"id\") ON DELETE cascade ON UPDATE no action;",
+      "source_file_norm": "packages/evals/src/db/migrations/0005_strong_skrulls.sql",
+      "id": "T_16_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "storage_type": "table",
+      "id": "\"toolErrors_task_id_tasks_id_fk\""
+    },
+    {
+      "source_datasets": [
+        "\"tasks\"",
+        "\"public\".\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0005_strong_skrulls.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_task_id_tasks_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\" FOREIGN KEY (\"task_metrics_id\") REFERENCES \"public\".\"taskMetrics\"(\"id\") ON DELETE set null ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_task_id_tasks_id_fk\" FOREIGN KEY (\"task_id\") REFERENCES \"public\".\"tasks\"(\"id\") ON DELETE cascade ON UPDATE no action;",
+      "source_file_norm": "packages/evals/src/db/migrations/0005_strong_skrulls.sql",
+      "id": "T_17_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "storage_type": "table",
+      "id": "\"public\".\"runs\""
+    },
+    {
+      "source_datasets": [
+        "\"tasks\"",
+        "\"public\".\"taskMetrics\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0005_strong_skrulls.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_task_id_tasks_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\" FOREIGN KEY (\"task_metrics_id\") REFERENCES \"public\".\"taskMetrics\"(\"id\") ON DELETE set null ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_task_id_tasks_id_fk\" FOREIGN KEY (\"task_id\") REFERENCES \"public\".\"tasks\"(\"id\") ON DELETE cascade ON UPDATE no action;",
+      "source_file_norm": "packages/evals/src/db/migrations/0005_strong_skrulls.sql",
+      "id": "T_18_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "storage_type": "table",
+      "id": "\"public\".\"taskMetrics\""
+    },
+    {
+      "source_datasets": [
+        "\"toolErrors\"",
+        "\"public\".\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0005_strong_skrulls.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_task_id_tasks_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\" FOREIGN KEY (\"task_metrics_id\") REFERENCES \"public\".\"taskMetrics\"(\"id\") ON DELETE set null ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_task_id_tasks_id_fk\" FOREIGN KEY (\"task_id\") REFERENCES \"public\".\"tasks\"(\"id\") ON DELETE cascade ON UPDATE no action;",
+      "source_file_norm": "packages/evals/src/db/migrations/0005_strong_skrulls.sql",
+      "id": "T_19_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "source_datasets": [
+        "\"toolErrors\"",
+        "\"public\".\"tasks\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0005_strong_skrulls.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" DROP CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_run_id_runs_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"toolErrors\" DROP CONSTRAINT \"toolErrors_task_id_tasks_id_fk\";\n--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"tasks\" ADD CONSTRAINT \"tasks_task_metrics_id_taskMetrics_id_fk\" FOREIGN KEY (\"task_metrics_id\") REFERENCES \"public\".\"taskMetrics\"(\"id\") ON DELETE set null ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_run_id_runs_id_fk\" FOREIGN KEY (\"run_id\") REFERENCES \"public\".\"runs\"(\"id\") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint\nALTER TABLE \"toolErrors\" ADD CONSTRAINT \"toolErrors_task_id_tasks_id_fk\" FOREIGN KEY (\"task_id\") REFERENCES \"public\".\"tasks\"(\"id\") ON DELETE cascade ON UPDATE no action;",
+      "source_file_norm": "packages/evals/src/db/migrations/0005_strong_skrulls.sql",
+      "id": "T_20_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "storage_type": "table",
+      "id": "\"public\".\"tasks\""
+    },
+    {
+      "source_datasets": [
+        "\"runs\""
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\HPENVY~1\\AppData\\Local\\Temp\\cartographer_clone_y2j1uwc8\\packages\\evals\\src\\db\\migrations\\0006_worried_spectrum.sql",
+      "line_range": null,
+      "sql_query_if_applicable": "ALTER TABLE \"runs\" ADD COLUMN \"execution_method\" text DEFAULT 'vscode' NOT NULL;",
+      "source_file_norm": "packages/evals/src/db/migrations/0006_worried_spectrum.sql",
+      "id": "T_21_packages/evals/src/db/migrations/0006_worried_spectrum.sql"
+    }
+  ],
+  "edges": [
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"runs\"",
+      "target": "T_1_packages/evals/src/db/migrations/0001_add_timeout_to_runs.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"runs\"",
+      "target": "T_2_packages/evals/src/db/migrations/0001_lowly_captain_flint.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"runs\"",
+      "target": "T_3_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"runs\"",
+      "target": "T_4_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"runs\"",
+      "target": "T_5_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"runs\"",
+      "target": "T_6_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"runs\"",
+      "target": "T_7_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"runs\"",
+      "target": "T_8_packages/evals/src/db/migrations/0002_bouncy_blazing_skull.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"runs\"",
+      "target": "T_9_packages/evals/src/db/migrations/0003_simple_retro_girl.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"runs\"",
+      "target": "T_21_packages/evals/src/db/migrations/0006_worried_spectrum.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"tasks_language_exercise_idx\"",
+      "target": "T_10_packages/evals/src/db/migrations/0004_sloppy_black_knight.sql:1-1"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"tasks\"",
+      "target": "T_11_packages/evals/src/db/migrations/0004_sloppy_black_knight.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"tasks\"",
+      "target": "T_12_packages/evals/src/db/migrations/0004_sloppy_black_knight.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"tasks\"",
+      "target": "T_13_packages/evals/src/db/migrations/0005_strong_skrulls.sql:1-1"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"tasks\"",
+      "target": "T_14_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"tasks\"",
+      "target": "T_17_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"tasks\"",
+      "target": "T_18_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "PRODUCES",
+      "source": "T_12_packages/evals/src/db/migrations/0004_sloppy_black_knight.sql",
+      "target": "\"tasks_language_exercise_iteration_idx\" ON \"tasks\" USING btree(\"run_id\", \"language\", \"exercise\", \"iteration\")"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"tasks_run_id_runs_id_fk\"",
+      "target": "T_13_packages/evals/src/db/migrations/0005_strong_skrulls.sql:1-1"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"tasks_task_metrics_id_taskMetrics_id_fk\"",
+      "target": "T_14_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"toolErrors\"",
+      "target": "T_15_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"toolErrors\"",
+      "target": "T_16_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"toolErrors\"",
+      "target": "T_19_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"toolErrors\"",
+      "target": "T_20_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"toolErrors_run_id_runs_id_fk\"",
+      "target": "T_15_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"toolErrors_task_id_tasks_id_fk\"",
+      "target": "T_16_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"public\".\"runs\"",
+      "target": "T_17_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"public\".\"runs\"",
+      "target": "T_19_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"public\".\"taskMetrics\"",
+      "target": "T_18_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    },
+    {
+      "edge_type": "CONSUMES",
+      "source": "\"public\".\"tasks\"",
+      "target": "T_20_packages/evals/src/db/migrations/0005_strong_skrulls.sql"
+    }
+  ]
+}
